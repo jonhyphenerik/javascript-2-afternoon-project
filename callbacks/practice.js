@@ -24,10 +24,12 @@
 
 /*
   Write a function called first that takes in two parameters, an array and a callback function.
-  Then invoke the callback function, passing in the first element in the array as it's argument.
+  Then invoke the callback function, passing in the first element in the array as its argument.
 */
 
-// Code Here 
+function first(arr, cb) {
+   cb(arr[0]);
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -105,7 +107,17 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-//Code Here
+function uniq (arr, cb) {
+  newArr = [];
+  for(i=0; i<=arr.length-1; i++) {
+    for(j=i+1; j<arr.length-2; j++) {
+      if(arr[i]===arr[j]) {
+        arr.splice(arr[i]);
+      }
+    }
+  }
+  cb(arr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -122,7 +134,12 @@ uniq(names, function(uniqArr){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here 
+function each(arr, cb) {
+  var i;
+  for(i=0; i< arr.length; i++) {
+    cb(arr[i], i);
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
