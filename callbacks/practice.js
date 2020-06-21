@@ -49,7 +49,9 @@ first(names, function(firstName){
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-//Code Here
+// let last = function(arr, cb()){
+//     cb(arr[arr.length-1]);
+// }
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -87,8 +89,14 @@ multiply(4, 3, function(answer){
   If it does, invoke the callback with true as the argument. 
   If the name does not exist, invoke the callback with false as the argument.
 */
-
-//Code Here 
+function contains(arr, name, cb){
+    if(arr.includes(name)){
+        cb(true)
+    }
+    else{
+        cb(false)
+    }
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -110,15 +118,8 @@ contains(names, 'Colt', function(result){
 */
 
 function uniq (arr, cb) {
-  newArr = [];
-  for(i=0; i<=arr.length-1; i++) {
-    for(j=i+1; j<arr.length-2; j++) {
-      if(arr[i]===arr[j]) {
-        arr.splice(arr[i]);
-      }
-    }
-  }
-  cb(arr);
+    let newArr= [...new Set(arr)];
+    cb(newArr);
 }
 
 // Do not edit the code below.
@@ -158,7 +159,13 @@ each(names, function(item, indice){
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-// Code here
+function getUserById(users, id, cb){
+    for(let i in users){
+        if(users[i].id=id){
+            cb(users[i])
+        }
+    }
+}
 
 // Do not edit the code below.
 var users = [
