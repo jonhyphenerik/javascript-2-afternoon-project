@@ -33,9 +33,7 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-function last(arr) {
-  return arr[arr.length()-1];
-}
+let last = arr => arr[arr.length-1];
 
 
 
@@ -126,7 +124,7 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+let divider = numbersArray => [numbersArray.filter(n=>n%2===0), numbersArray.filter(n=>n%2)]
 
 
 
@@ -148,7 +146,10 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+let finder = arr => {
+    let randomNumber = getRandomArbitrary();
+    arr.includes(randomNumber)? true: false;
+}
 
 
 
